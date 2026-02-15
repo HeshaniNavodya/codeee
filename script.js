@@ -2,7 +2,7 @@ const message = `Hey :)
 
 I just wanted to say...
 
-You randomly make my day better.`;
+I missed you a bit today.`;
 
 let typing=false;
 
@@ -59,3 +59,4 @@ function closeMessage(){
     document.getElementById("lockscreen").style.display="flex";
     document.getElementById("cursor").style.display="inline";
 }
+
