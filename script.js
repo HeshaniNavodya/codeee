@@ -23,15 +23,14 @@ setInterval(updateTime,1000);
 updateTime();
 /* --------------------------------- */
 
-
-/* open */
+/* open chat message */
 function openMessage(){
     document.getElementById("lockscreen").style.display="none";
     document.getElementById("chat").classList.remove("hidden");
     typeText();
 }
 
-/* typing */
+/* typing animation */
 function typeText(){
     const el=document.getElementById("text");
     let i=0;
@@ -51,7 +50,7 @@ function typeText(){
     type();
 }
 
-/* close back */
+/* close chat */
 function closeMessage(){
     if(typing) return;
 
@@ -59,4 +58,3 @@ function closeMessage(){
     document.getElementById("lockscreen").style.display="flex";
     document.getElementById("cursor").style.display="inline";
 }
-
