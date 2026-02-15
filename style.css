@@ -1,0 +1,91 @@
+body{
+    margin:0;
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+/* LOCKSCREEN */
+.lockscreen{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:80px;
+    background:linear-gradient(#1c1c1e,#000);
+    text-align:center;
+    cursor:pointer;
+}
+
+.time{
+    font-size:80px;
+    font-weight:200;
+}
+
+.date{
+    opacity:.7;
+    margin-bottom:40px;
+}
+
+.notification{
+    width:85%;
+    max-width:350px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+    padding:15px;
+    border-radius:20px;
+    text-align:left;
+    animation:slideDown .7s ease;
+}
+
+.app{
+    font-weight:bold;
+    font-size:14px;
+}
+
+.preview{
+    margin-top:4px;
+    font-size:16px;
+}
+
+.tap{
+    margin-top:6px;
+    font-size:12px;
+    opacity:.6;
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+/* CHAT */
+.chat{
+    height:100vh;
+    background:#0f0f10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+
+.chatbox{
+    background:#1c1c1e;
+    padding:20px;
+    border-radius:20px;
+    max-width:320px;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.hidden{display:none;}
+
+.cursor{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}

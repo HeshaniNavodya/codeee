@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lockscreen" class="lockscreen" onclick="openMessage()">
+
+    <div class="time" id="time">9:41</div>
+    <div class="date">Tuesday</div>
+
+    <div class="notification">
+        <div class="app">Messages</div>
+        <div class="preview">I got something to tell you...</div>
+        <div class="tap">tap to open</div>
+    </div>
+
+</div>
+
+<!-- MESSAGE SCREEN -->
+<div id="chat" class="chat hidden" onclick="closeMessage()">
+    <div class="chatbox">
+        <p id="text"></p>
+        <span class="cursor" id="cursor">|</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
