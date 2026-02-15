@@ -1,12 +1,49 @@
+/* ---------- BODY & BACKGROUND ---------- */
 body{
     margin:0;
     font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-    background:black;
     color:white;
     overflow:hidden;
+    position:relative;
 }
 
-/* LOCKSCREEN */
+/* animated gradient background */
+.bg{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4,#a18cd1,#ffecd2);
+    background-size: 400% 400%;
+    animation:gradientMove 30s ease infinite;
+    z-index:-2;
+}
+
+/* optional floating particles */
+.bg::after{
+    content:"";
+    position:absolute;
+    width:200%; height:200%;
+    top:-50%; left:-50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size:50px 50px;
+    animation:moveParticles 60s linear infinite;
+    z-index:-1;
+}
+
+/* gradient animation */
+@keyframes gradientMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
+
+/* particle movement */
+@keyframes moveParticles{
+    0%{ transform:translate(0,0); }
+    100%{ transform:translate(50px,50px); }
+}
+
+/* ---------- LOCKSCREEN ---------- */
 .lockscreen{
     height:100vh;
     display:flex;
@@ -14,9 +51,10 @@ body{
     align-items:center;
     justify-content:flex-start;
     padding-top:80px;
-    background:linear-gradient(#1c1c1e,#000);
     text-align:center;
     cursor:pointer;
+    position:relative;
+    z-index:1;
 }
 
 .time{
@@ -61,18 +99,20 @@ body{
     to{transform:translateY(0);opacity:1;}
 }
 
-/* CHAT */
+/* ---------- CHAT SCREEN ---------- */
 .chat{
     height:100vh;
-    background:#0f0f10;
+    background:rgba(0,0,0,0.5);
     display:flex;
     justify-content:center;
     align-items:center;
     cursor:pointer;
+    position:relative;
+    z-index:1;
 }
 
 .chatbox{
-    background:#1c1c1e;
+    background:rgba(28,28,30,0.9);
     padding:20px;
     border-radius:20px;
     max-width:320px;
